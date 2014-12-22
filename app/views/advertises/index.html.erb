@@ -1,0 +1,25 @@
+<div class="container" style="background:#fff;margin-top:40px;margin-bottom:40px;padding-bottom:30px;padding-top:30px;">
+<%= link_to 'New Advertise', new_advertise_path, class: "btn", style: "margin-bttom:30px;" %>
+<hr>
+<% @advertises.each do |advertise| %>
+<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="row panel">
+    <div class="col-md-4">
+      <%= image_tag advertise.text,size: "350x200" %>
+    </div>
+        <div class="col-md-8 ">
+           <div class="header">
+                <h3><%= advertise.name %></h3>
+           </div>
+           <div class="" style="margin-top:50px;padding: 0px;display:inline-block;">
+                <%= link_to '<i class="fa fa-eye "></i> Show'.html_safe, advertise ,style: "font-size:12px;color:#fff;margin-left:4px;", class: "btn btn-success" %>
+                <%= link_to '<i class="fa fa-edit (alias)"></i> Edit'.html_safe, edit_advertise_path(advertise),style: "font-size:12px;color:#fff;margin-left:4px;background:#888;",class: "btn btn-primary" %>
+               <%= link_to ' <i class="fa fa-trash"></i> Destroy'.html_safe, advertise, method: :delete, data: { confirm: 'Are you sure?' },style: "font-size:12px;color:#fff;margin-left:4px;background:red;", class: "btn btn-danger" %>
+           </div>  
+        </div>
+    </div> 
+</div>
+<hr>
+<% end %>
+<%= link_to 'New Advertise', new_advertise_path, class: "btn", style: "margin-bttom:30px;" %>
+</div>

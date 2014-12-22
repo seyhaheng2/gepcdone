@@ -1,0 +1,150 @@
+<div id="sticky-header" class="hdr-layout-1">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3 entry-logo">
+            <div class="logo">
+               <h1>
+                  <%= link_to "Gepcnews.com", root_path, style: "font-size:26px;font-family: 'Poiret One', cursive;" %>
+               </h1>
+            </div>
+            <!-- #logo -->
+         </div>
+         <!-- .col-md-3 -->
+         <nav class="col-md-8 navigation-main">
+            <div class="menu-main-menu-container">
+               <ul id="main-nav-sticky" class="sf-menu">
+                  <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-27">
+                  <%= link_to "News", root_path %>
+                  </li>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+                     <a href="#">Event</a>
+                     <ul class="sub-menu">
+                        <li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-105">
+   
+
+  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+
+
+                        </li>
+                     </ul>
+                  </li>
+                  <% @type.each do |type| %>
+                        <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178"><%= link_to type.name, root_path(id: type.id) %></li>
+                  <% end %>
+         <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+                     <a href="#">More</a>
+                     <ul class="sub-menu">
+                        <li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-105">
+                           <%= link_to "Service", home_service_path %>
+                           <%= link_to "Contact", home_contact_path %>
+                           <%= link_to "About", home_about_path %>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><%= link_to "Login", new_user_session_path %></li>
+               </ul>
+            </div>
+         </nav>
+         <!-- .col-md-8 -->
+         <div class="col-md-1 entry-search">
+            <div class="search-toggle">
+            </div>
+            <!-- .search-toggle -->
+            <div class="search-container search-box-wrapper">
+               <div class="search-box">
+                  <%= form_tag root_path, method: :get, class: "searchform" do %>
+                   <%= text_field_tag :query, params[:query], class: "field s", placeholder: "Search ..." %>
+                   <button type="submit" class="btn submit searchsubmit">
+                     <i class="fa fa-angle-double-right"></i>
+                   </button>
+                  <% end %>
+               </div>
+               <!-- .search-box -->
+            </div>
+            <!-- .search-container -->
+         </div>
+         <!-- .entry-search -->
+      </div>
+      <!-- .row -->
+   </div>
+<!-- .container -->
+</div>
+<!-- #sticky-header -->
+
+   <div id="entry-header">
+   </div>
+
+<div class="hdr-layout-1" style="background:#fff;">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3 entry-logo">
+            <div class="logo">
+               <h1>
+                  <%= link_to "Gepcnews.com", root_path, style: "font-size:26px;font-family: 'Poiret One', cursive;" %>
+               </h1>
+            </div>
+            <!-- #logo -->
+         </div>
+         <!-- .col-md-3 -->
+         <nav class="col-md-8 navigation-main">
+            <div class="menu-main-menu-container">
+               <ul id="main-nav-sticky" class="sf-menu">
+                  <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-27">
+                  <%= link_to "News", root_path %>
+                  </li>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+                     <a href="#">Event</a>
+                     <ul class="sub-menu">
+                        <li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-105">
+                            <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+                               <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+                             <% end %>
+                        </li>
+                     </ul>
+                  </li>
+                  <% @type.each do |type| %>
+                  <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29">
+                     <%= link_to type.name, root_path(id: type.id) %>
+                  </li>
+                  <% end %>
+                  <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+                     <a href="#">More</a>
+                     <ul class="sub-menu">
+                        <li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-105">
+                           <%= link_to "Service", home_service_path %>
+                           <%= link_to "Contact", home_contact_path %>
+                           <%= link_to "About", home_about_path %>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><%= link_to "Login", new_user_session_path %></li>
+               </ul>
+            </div>
+         </nav>
+         <!-- .col-md-8 -->
+         <div class="col-md-1 entry-search">
+            <div class="search-toggle">
+            </div>
+            <!-- .search-toggle -->
+            <div class="search-container search-box-wrapper">
+               <div class="search-box">
+                   <%= form_tag root_path, method: :get, class: "searchform" do %>
+                   <%= text_field_tag :query, params[:query], class: "field s", placeholder: "Search ..." %>
+                   <button type="submit" class="btn submit searchsubmit">
+                     <i class="fa fa-angle-double-right"></i>
+                   </button>
+                   <% end %>
+               </div>
+               <!-- .search-box -->
+            </div>
+            <!-- .search-container -->
+         </div>
+         <!-- .entry-search -->
+      </div>
+      <!-- .row -->
+   </div>
+<!-- .container -->
+</div>

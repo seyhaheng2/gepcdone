@@ -1,0 +1,117 @@
+@media (max-width: 991px) { 
+	.sf-menu, #sticky-header.hdr-layout-1, #sticky-header.hdr-layout-2, #sticky-header.hdr-layout-4, .ct-prev-pag, .ct-next-pag { display: none !important; }
+	.navigation-main select { display: block; margin: 0; }
+	.navigation-main:after { display: block; }
+	.logo, .entry-hdr-ads { padding: 20px 0px; text-align: center;	}
+	.logo { padding: 30px 0px;}
+	.search-container { display: block!important; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; position: initial; padding: 0; }
+	.search-container .searchform { width: 100%; }
+	.search-toggle { display: none; }
+	.entry-search { padding: 20px 15px; }
+	.searchform input[type="text"] { width: 94.5%; }
+	.meta-share-icons { display: inline-block; position: relative; }
+	.entry-category-name,
+	.entry-category-name,
+	.entry-category-desc {
+	    border-right: 0;
+	    padding: 15px;
+	}
+	#entry-bnr-hdr { padding-right: 15px; }
+
+	.entry-category-desc img { max-width: 100%; height: auto; }
+	.entry-category .custom-description { padding: 0; }
+	.navigation-main,
+	.entry-logo,
+	#primary { padding-left: 15px; padding-right: 15px; }
+	#secondary { height: auto !important; }
+}
+@media (max-width: 768px) { 
+	#secondary { background-color: transparent; }
+
+	.post-wrapper, .page-wrapper { padding: 35px 35px 55px; }
+
+	.single .ct-related-thumbs li { width: 50%; height: auto; }
+
+	.comment-form input[type="email"], .comment-form input[type="url"], .comment-form input[type="text"] { width: 100%; }	
+
+	.entry-category .taxonomy-description { padding: 10px 0 0 0; }
+
+	.single article .entry-thumb, .page article.type-page .entry-thumb { margin: 55px -35px 0px; }
+	.single article .entry-content, .page article.type-page .entry-content { margin: 30px 0px 30px; }
+	.single .entry-share, .single .entry-share-custom, .single #author-block, .post-navigation, .entry-comments { padding: 35px; }
+	.post-navigation .nav-links:after { right: 12px; }
+	.post-navigation .nav-links:before { left: 12px; }
+	.entry-comments .comment-body .reply {
+    	bottom: 10px;
+	    top: inherit;
+	}
+	.comment-list ol { padding-left: 20px; }
+	.entry-comments .avatar { width: 50px; height: 50px; }
+}
+@media (max-width: 720px) { 
+}
+@media  (max-width: 683px) {
+	/* Samsung Galaxy Tab (landscape) */	
+}
+@media  (max-width: 640px) {
+	.searchform input[type="text"] { width: 93%; }
+	.post-wrapper, .page-wrapper { padding: 25px 35px 35px; }
+	.pagination, #pbd-alp-load-posts { padding: 20px; }
+}
+@media  (max-width: 600px) {
+}
+@media  (max-width: 570px) {
+	/* Motorola Mobility Milestone */
+}
+@media  (max-width: 568px) {
+}
+@media  (max-width: 540px) {
+	.searchform input[type="text"] { width: 92%; }
+}
+@media  (max-width: 533px) {
+
+}
+@media  (max-width: 500px) {
+	.ct-related-thumbs .related-title { display: none; }
+}
+@media  (max-width: 480px) {
+	.searchform input[type="text"] { width: 90%; }
+
+	#blog-entry h1.entry-title { font-size: 24px; line-height: 36px; }
+	.ct-meta.meta-format i { font-size: 24px; }
+}
+@media  (max-width: 400px) {
+	.searchform input[type="text"] { width: 89%; }
+}
+@media  (max-width: 360px) {
+	.searchform input[type="text"] { width: 87%; }
+	.post-wrapper, .page-wrapper { padding: 25px; }
+	#secondary .searchform input[type="text"] { width: 85.8%; }
+	.entry-comments { padding: 25px; }
+	.single article .entry-thumb, .page article.type-page .entry-thumb { margin: 25px -25px 0px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

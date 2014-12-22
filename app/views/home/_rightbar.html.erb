@@ -1,0 +1,68 @@
+<div id="secondary" class="col-md-4  home-sidebar widget-area">
+   <div class="widget-area-wrapper">
+<!--       <aside id="text-3" class="widget widget_text">
+         <header class="widget-header">
+            <h1 class="widget-title">About me</h1>
+         </header>
+         <div class="textwidget">
+            <img class="aligncenter" src="assets/me_01.png" alt="me" /><br/>
+            <div>Hi, I'm Serge and I'm the web designer/developer and Elite author on <a href="http://themeforest.net/user/ZERGE/portfolio?ref=zerge">ThemeForest</a>. I also like photography and black tea :-)</div>
+         </div>
+      </aside> -->
+      <aside id="search-3" class="widget widget_search">
+      <%= form_tag root_path, method: :get, class: "searchform" do %>
+       <%= text_field_tag :query, params[:query], class: "field s", placeholder: "Search ..." %>
+       <button type="submit" class="btn submit searchsubmit">
+         <i class="fa fa-angle-double-right"></i>
+       </button>
+         
+      <% end %>
+
+      </aside>
+      <!-- START POPULAR POSTS WIDGET -->
+      <aside id="ct-popularpost-widget-3" class="widget ct-popularpost-widget">
+         <header class="widget-header">
+            <h1 class="widget-title">Most Popular by View</h1>
+         </header>
+         <ul class="popular-posts-widget popular-widget-401786409">
+         <% @recent_posts.each do |post| %>
+            <li class="clearfix">
+               <div class="widget-post-small-thumb">
+                  <%= link_to post_path(id: post.id) do %>
+                        <%= image_tag post.image,size: "70"  %>
+                  <% end %>
+               </div>
+               <!-- widget-post-small-thumb -->
+               <h2 class="entry-title"><%= link_to truncate(post.name, length: 55), post_path(id: post.id) %></h2>
+               <span class="entry-date sm-italic-gray">
+                     <% if post.created_at > Time.now.beginning_of_day %>
+                        <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                     <% else %> 
+                        <%= post.created_at.strftime("%b %d, %Y") %>
+                     <% end %> 
+               </span><!-- .entry-date -->
+               <div class="entry-content">
+                  <%= truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 100, :omission => "...") %>
+               </div>
+               <!-- .entry-content -->
+            </li>
+         <% end %>
+         </ul>
+      </aside>
+
+      <!-- END RECENT COMMENTS WIDGET -->
+      <aside id="text-4" class="widget widget_text">
+         <header class="widget-header">
+            <h1 class="widget-title">Ads</h1>
+         </header>
+         <div class="textwidget">
+            <div class="ct-google-ads-widget">
+            <% @ads.each do |ad| %>
+               <%= image_tag ad.text %>
+            <% end %>
+            </div>
+         </div>
+      </aside>
+   </div>
+   <!-- .widget-area-wrapper -->
+</div>

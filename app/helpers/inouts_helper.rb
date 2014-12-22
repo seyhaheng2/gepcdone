@@ -1,0 +1,2 @@
+module InoutsHelper
+end

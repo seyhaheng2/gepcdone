@@ -1,0 +1,86 @@
+
+<!-- START CONTENT -->
+<div id="main-content" class="main-content">
+   <div class="container">
+      <div class="row">
+         <section id="primary" class="col-md-8  " role="main">
+            <div id="blog-entry" class="clearfix">
+            <% @posts.each do |post| %>
+               <article id="post-57" class="post-57 post type-post status-publish format-standard has-post-thumbnail hentry category-beauty category-post-formats tag-beauty-2 tag-colors tag-fun tag-girls clearfix" role="article">
+                  <div class="entry-thumb">
+                     <%= image_tag post.image_url(:large), class: "ct-transition wp-post-image",size: "720x442" %>
+                  </div>
+                  <!-- .entry-thumb -->
+                  <div class="post-wrapper">
+                     <span class="ct-meta meta-category">
+                     # <%= raw post.tag_list.map{|t| link_to t, tag_path(t)}.join(', ') %>
+                     </span>
+                     <span class="ct-meta meta-format clearfix">
+                        <%= (post.logo).try(:html_safe) %>
+                     </span>
+                     <header class="entry-header">
+                        <h1 class="entry-title ct-transition">
+                           <%= link_to post_path(post.id) do %>
+                              <%= post.name %>
+                           <% end %>
+                        </h1>
+                     </header>
+                     <!-- .entry-header -->
+                     <div class="entry-content">
+                         <%= truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 230, :omission => "...") %>		
+                     </div>
+                     <!-- .entry-content -->
+                     <%= link_to "Read More", post_path(id: post.id), class: "btn", style: "margin-top:30px;" %>	
+                     <div class="entry-meta">
+                        <span class="ct-meta entry-date updated"><i class="fa fa-calendar"></i><a href="girls-having-fun/index.html" rel="bookmark">
+                        <time class="entry-date">
+                                 <% if post.created_at > Time.now.beginning_of_day %>
+                                    <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                                 <% else %> 
+                                    <%= post.created_at.strftime("%b %d, %Y") %>
+                                 <% end %>
+                        </time>
+                        </a>
+                        </span><!-- .meta-date -->
+                        <span class="ct-meta meta-author">
+                        <i class="fa fa-user" title="Author"></i>
+                        <span class="ct-by-author">by </span>			<span class="author vcard"><a class="url fn n" href="author/admin/index.html" title="View all posts by Serge Kij" rel="author">Serge Kij</a></span>		</span><!-- .meta-author -->
+                        <span class="ct-meta meta-views" title="Views">
+                        <i class="fa fa-eye"></i><span class="views-count"><%= post.viewer %> views</span>		</span><!-- /meta-views -->				
+                        <span class="ct-meta meta-share">
+                           <span class="share-icon"><i class="fa fa-share-alt"></i></span>
+                           <span class="share-title">Share:</span>
+                           <span class="meta-share-icons" style="margin-top:3px;">
+                              <%= social_share_button_tag(post.name, :popup => "true") %>
+                           </span><!-- .meta-share-icons -->
+                        </span>
+                        <!-- .meta-share -->
+                     </div>
+                     <!-- .entry-meta -->
+                  </div>
+                  <!-- .post-wrapper -->
+               </article>
+               <!-- #post-ID -->	
+            <% end %>	
+            </div>
+            <!-- #blog-entry -->
+            <div class="ct-divider">
+               <div class="divider-gap">
+                  <div class="divider-border"></div>
+               </div>
+               <!-- .divider-gap -->
+            </div>
+            <div class="pagi">
+               <%= will_paginate @posts %>
+            </div>
+         </section>
+         <!-- .col-md-12 -->
+            <%= render 'rightbar' %>
+         <!-- .col-md-4 -->
+      </div>
+      <!-- .row -->
+   </div>
+<!-- .container -->
+</div>
+
+

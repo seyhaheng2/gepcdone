@@ -1,0 +1,261 @@
+
+
+a { color: #72c9b9; }
+a:hover, a:focus { color: #72c9b9; }
+
+#logo {
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 110px;
+	padding-bottom: 110px;
+}
+
+
+.logo > h1.text-logo  {
+	font-weight: 700;
+	font-style: normal;
+	font-size: 36px;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	font-family: Playfair Display;
+	text-transform: none;
+}
+
+.logo > h1 > a {
+	color: #171819;
+}
+
+
+.entry-hdr-ads {
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 95px;
+	padding-bottom: 95px;
+}
+
+#entry-header { background-color: #FFFFFF; }
+
+
+/* Body Font Properties */
+
+body {
+	background-color: #d7d8d9	color: #424242;
+	font-size: 13px;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	line-height: 24px;
+}
+
+/* Menu Font Properties */
+
+.sf-menu a {
+	font-style: normal;
+	font-size: 14px;
+	text-transform: none;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	font-family: Open Sans;
+	line-height: 24px;
+	color: #6d6d6d;
+	font-weight: 600;
+}
+
+.sf-menu > li {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.sf-menu ul li a {
+	color: #6d6d6d;
+}
+
+.sf-menu ul li a:hover {
+	color: #72c9b9;
+}
+
+/*.sf-menu .current-menu-item a,*/
+.sf-menu .current_page_item a,
+.sf-menu .current-menu-ancestor a {
+	color: #171819;
+}
+
+/*.sf-menu > li.current-menu-item,*/
+.sf-menu > li.current_page_item,
+.sf-menu > li.current-menu-ancestor {
+	border-bottom-color: #72c9b9;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;	
+}
+
+.sf-menu a:hover { color: #171819; }
+
+.entry-search {
+	padding-top: 114px;
+	padding-bottom: 112px;
+}
+
+
+/* Layout1 */
+	.sf-menu {
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 114px;
+		padding-bottom: 112px;
+	}
+
+
+
+.site-info {
+	font-weight: 400;
+	font-style: normal;
+	color: #979899;
+	font-size: 12px;
+	line-height: 24px;
+	background-color: #FFFFFF;
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.site-info a { color: #373839; }
+.site-info a:hover { color: #373839; }
+
+
+
+/* Post */
+.ct-meta i,
+.entry-meta .ct-like {	color: #d7d7d7; }
+
+.entry-meta .ct-meta a,
+.entry-meta .ct-meta {
+	color: #979899;
+}
+
+
+.mask-thumb {
+	background-color: #72c9b9;
+	background-color: rgba(114,201,185, 0.7);
+}
+
+
+
+/* Blog Title Font Properties */
+
+#blog-entry h1.entry-title {
+	font-weight: 700;
+	font-style: normal;
+	font-size: 30px;
+	text-transform: none;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	font-family: Playfair Display;
+	line-height: 42px;
+}
+
+#blog-entry h1.entry-title a,
+#blog-entry h1.entry-title i { 	color: #171819; }
+.footer-sidebar h2.entry-title a:after { color: #72c9b9; }
+
+#blog-entry .entry-content {
+	font-size: 16px;
+	line-height: 28px;
+	color: #777879;
+}
+
+#blog-entry h1.entry-title a:hover {
+	color: #72c9b9;
+}
+
+.ct-custom-ads {
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/* Widgets Properties */
+
+h1.widget-title {
+	color: #171819;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 12px;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	font-family: Open Sans;
+	line-height: 24px;
+}
+
+.widget-header {
+	text-align: center;
+}
+
+h1.widget-title {
+	border-bottom-color: #72c9b9;
+}
+
+#secondary {
+	background-color: #f7f8fa;
+}
+
+.widget-area-wrapper {
+	padding: 35px 30px 35px 30px;
+}
+
+
+
+
+.archive .pagination { display: block !important; }
+
+
+
+.single h1.entry-title,
+.page .page-wrapper h1.entry-title,
+.archive .page-wrapper h1.page-title,
+.error404 .page-wrapper h1.page-title,
+.search-no-results .page-wrapper h1.page-title {
+	color: #171819;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 30px;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	font-family: Playfair Display;
+	line-height: 42px;
+	text-transform: none;
+}
+
+.entry-comments .comments-title,
+#reply-title,
+.archive .page-wrapper h1.page-title,
+.error404 .page-wrapper h1.page-title {
+	font-family: Playfair Display;
+	color: #171819;
+}
+
+
+
+.single article .entry-content,
+.page article.type-page .entry-content {
+	color: #777879;
+	font-size: 16px;
+	letter-spacing: 0px;
+	word-spacing: 0px;
+	font-family: Open Sans;
+	line-height: 28px;
+	text-transform: none;
+}
+
+
+@media (max-width: 768px) { 
+	.widget-area-wrapper {
+		background-color: #f7f8fa;
+	}
+}
+
+
+/* Color scheme */
+

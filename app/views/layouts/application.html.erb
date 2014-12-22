@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cocacola</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+	
+
+            <script>
+               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+               })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+               
+               ga('create', 'UA-45694919-1', 'elite-themes.com');
+               ga('send', 'pageview');
+               
+            </script><!-- Fav and touch icons -->
+            <style type='text/css'>
+               /* Custom Styles */
+               body { 
+               background-color: #d7d8d9;
+               background-image:  none; -webkit-background-size: auto;
+               -moz-background-size: auto;
+               -o-background-size: auto;
+               background-size: auto;filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=' none', sizingMethod='scale');-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src=' none', sizingMethod='scale')";
+               background-attachment: fixed;
+               background-repeat: repeat;
+               background-position: top left; 
+               }
+               .entry-thumb .slider-preloader {
+               background-color: #FFF;
+               text-align: center;
+               position: absolute;
+               left: 50%;
+               margin-left: -8px;
+               }                    
+            </style>
+</head>
+<body class="home blog">
+   <%= render 'layouts/header' %>
+   <%= render 'layouts/msg' %>
+   <%= yield %>
+
+   <%= render "home/footer" %>
+            <script type="text/javascript">
+           //     jQuery('.mc4wp-form').find('[type="submit"]').click(function () {
+           //     	jQuery(this).parents('.mc4wp-form').addClass('mc4wp-form-submitted');
+           //     });
+           </script>
+            <script type='text/javascript'>
+               var ct_localization = {"go_to":"MENU","to_top":"To the Top"};
+               var ctsidebar = {"flex_slider":"0"};
+               var ctsidebar = {"flex_slider":"1"};
+               var customjs = {"script_pretty":"1"};
+               var stickymenu = {"sticky_menu":"1","menu_background":"#FFFFFF","rgba":"rgba(255,255,255,0.9)","admin_bar":"0","logo_padding_px":"110px 0 110px 0","menu_padding_px":"114px 0 112px 0"};
+            </script>
+
+</body>
+</html>
