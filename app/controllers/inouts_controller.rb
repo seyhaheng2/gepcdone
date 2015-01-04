@@ -1,6 +1,6 @@
 class InoutsController < ApplicationController
   before_action :set_inout, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   respond_to :html
 
   def index

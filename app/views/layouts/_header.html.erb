@@ -1,6 +1,6 @@
-<div id="sticky-header" class="hdr-layout-1">
+<div id="sticky-header" class="hdr-layout-2">
    <div class="container">
-      <div class="row">
+      <div class="row ">
          <div class="col-md-3 entry-logo">
             <div class="logo">
                <h1>
@@ -16,22 +16,31 @@
                   <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-27">
                   <%= link_to "News", root_path %>
                   </li>
+                     <% if current_user %>
+                     <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+                        <%= link_to "Post", posts_path %>   
+                     </li>
+                     <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+                        <%= link_to "Advertise", advertises_path  %></li>
+                     <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">  
+                        <%= link_to "Type", inouts_path  %>
+                     </li>
+                        <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32">
+                        <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                     <% else %>
+
                   <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
-                     <a href="#">Event</a>
+                     <%= link_to "Event" %>
                      <ul class="sub-menu">
                         <li id="menu-item-105" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-105">
-   
-
-  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-
-
+                             <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+                               <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+                             <% end %>
                         </li>
                      </ul>
                   </li>
                   <% @type.each do |type| %>
-                        <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178"><%= link_to type.name, root_path(id: type.id) %></li>
+                        <li id="menu-item-178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178"><%= link_to type.name, root_path(type) %></li>
                   <% end %>
          <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
                      <a href="#">More</a>
@@ -43,8 +52,12 @@
                         </li>
                      </ul>
                   </li>
-
-                  <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><%= link_to "Login", new_user_session_path %></li>
+                   <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32">
+                     
+                     <%= link_to "Login", new_user_session_path %></li>
+                  </li>
+<% end %>
+                 
                </ul>
             </div>
          </nav>
@@ -77,8 +90,8 @@
    <div id="entry-header">
    </div>
 
-<div class="hdr-layout-1" style="background:#fff;">
-   <div class="container">
+<div class="hdr-layout-1 " style="background:#fff;">
+   <div class="container ">
       <div class="row">
          <div class="col-md-3 entry-logo">
             <div class="logo">
@@ -95,6 +108,18 @@
                   <li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-27">
                   <%= link_to "News", root_path %>
                   </li>
+         <% if current_user %>
+            <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+               <%= link_to "Post", posts_path %>   
+            </li>
+            <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
+               <%= link_to "Advertise", advertises_path  %></li>
+            <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">  
+               <%= link_to "Type", inouts_path  %>
+            </li>
+            <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32">
+                        <%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+         <% else %>
                   <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
                      <a href="#">Event</a>
                      <ul class="sub-menu">
@@ -106,9 +131,9 @@
                      </ul>
                   </li>
                   <% @type.each do |type| %>
-                  <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29">
-                     <%= link_to type.name, root_path(id: type.id) %>
-                  </li>
+                     <li id="menu-item-29" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-29">
+                        <%= link_to type.name, root_path(id: type) %>
+                     </li>
                   <% end %>
                   <li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28">
                      <a href="#">More</a>
@@ -120,7 +145,9 @@
                         </li>
                      </ul>
                   </li>
-                  <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><%= link_to "Login", new_user_session_path %></li>
+                  <li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32">
+                     <%= link_to "Login", new_user_session_path %></li>
+                  <% end %>
                </ul>
             </div>
          </nav>

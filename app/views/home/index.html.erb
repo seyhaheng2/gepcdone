@@ -7,9 +7,17 @@
             <div id="blog-entry" class="clearfix">
             <% @posts.each do |post| %>
                <article id="post-57" class="post-57 post type-post status-publish format-standard has-post-thumbnail hentry category-beauty category-post-formats tag-beauty-2 tag-colors tag-fun tag-girls clearfix" role="article">
+                  <% if post.video.present? %>
+                  <div class="cont">
+                     <div class="entry-thumb">
+                        <%= post.video.html_safe %>
+                     </div>
+                  </div>
+                  <% else %>
                   <div class="entry-thumb">
                      <%= image_tag post.image_url(:large), class: "ct-transition wp-post-image",size: "720x442" %>
                   </div>
+                  <% end %>
                   <!-- .entry-thumb -->
                   <div class="post-wrapper">
                      <span class="ct-meta meta-category">
@@ -20,7 +28,7 @@
                      </span>
                      <header class="entry-header">
                         <h1 class="entry-title ct-transition">
-                           <%= link_to post_path(post.id) do %>
+                           <%= link_to post_path(post) do %>
                               <%= post.name %>
                            <% end %>
                         </h1>
@@ -30,21 +38,23 @@
                          <%= truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 230, :omission => "...") %>		
                      </div>
                      <!-- .entry-content -->
-                     <%= link_to "Read More", post_path(id: post.id), class: "btn", style: "margin-top:30px;" %>	
+                     <%= link_to "Read More", post_path(post), class: "btn", style: "margin-top:30px;" %>	
                      <div class="entry-meta">
-                        <span class="ct-meta entry-date updated"><i class="fa fa-calendar"></i><a href="girls-having-fun/index.html" rel="bookmark">
+                        <span class="ct-meta entry-date updated"><i class="fa fa-calendar"></i>
                         <time class="entry-date">
-                                 <% if post.created_at > Time.now.beginning_of_day %>
-                                    <%="#{time_ago_in_words(post.created_at)} ago"%> 
-                                 <% else %> 
-                                    <%= post.created_at.strftime("%b %d, %Y") %>
-                                 <% end %>
+                           <% if post.created_at > Time.now.beginning_of_day %>
+                              <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                           <% else %> 
+                              <%= post.created_at.strftime("%b %d, %Y") %>
+                           <% end %>
                         </time>
-                        </a>
                         </span><!-- .meta-date -->
                         <span class="ct-meta meta-author">
                         <i class="fa fa-user" title="Author"></i>
-                        <span class="ct-by-author">by </span>			<span class="author vcard"><a class="url fn n" href="author/admin/index.html" title="View all posts by Serge Kij" rel="author">Serge Kij</a></span>		</span><!-- .meta-author -->
+                        <span class="ct-by-author">by </span
+                        <span class="author vcard">
+                           <%= post.user.username %>
+                        </span>		</span><!-- .meta-author -->
                         <span class="ct-meta meta-views" title="Views">
                         <i class="fa fa-eye"></i><span class="views-count"><%= post.viewer %> views</span>		</span><!-- /meta-views -->				
                         <span class="ct-meta meta-share">

@@ -23,7 +23,7 @@
   <br>
   <div class="form-group">
      <%= f.label :video %>
-     <%= f.text_field :video %>
+     <%= f.text_field :video, class: "form-control" %>
   </div>
   <br>
   <div class="form-group">
@@ -33,7 +33,7 @@
   <br>
   <div class="form-group">
     <%= f.label :logo %><br>
-    <%= f.select :logo, options_for_select([["Video", '<i class="fa fa-film"></i>'], ["Image", '<i class="fa fa-picture-o"></i>']]) %>
+    <%= f.select :logo, options_for_select([["Video", '<i class="fa fa-film"></i>'], ["Image", '<i class="fa fa-picture-o"></i>'], ["Book", '<i class="fa fa-book"></i>'], ["Music", '<i class="fa fa-music"></i>'],  ["Pin", '<i class="fa fa-eyedropper"></i>'],  ["Camera", '<i class="fa fa-camera"></i>']]) %>
   </div>
   <br>
   <div class="form-group">

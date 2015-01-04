@@ -15,6 +15,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'contact_us', '~> 0.5.1'
 
 gem 'devise'
 gem 'bootstrap-generators'
@@ -28,6 +29,8 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'will_paginate', '~> 3.0'
 gem 'friendly_id', '~> 5.0.0'
 gem 'pg_search'
-gem 'fog'
+gem 'fog', '~> 1.26.0'
+gem 'aws-sdk', '~> 1.60.2'
 gem 'fitvidsjs_rails'
 gem 'acts-as-taggable-on', '~> 3.4'
+

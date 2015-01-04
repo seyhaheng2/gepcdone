@@ -17,6 +17,7 @@
  */
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Metal);
+@import url(http://fonts.googleapis.com/css?family=Freehand);
 
 /*<div id="tag_cloud">
   <% tag_cloud Article.tag_counts, %w[s m l] do |tag, css_class| %>

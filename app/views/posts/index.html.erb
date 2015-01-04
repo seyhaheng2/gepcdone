@@ -3,14 +3,14 @@
 <hr>
 <% @posts.each do |post| %>
 <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
-  <div class="row panel">
+  <div class="row">
     <div class="col-md-4">
       <%= image_tag post.image,size: "350x200" %>
     </div>
         <div class="col-md-8  col-xs-12">
            <div class="header">
                 <h3><%= post.name %></h3>
-                <span><%= truncate(post.description) %></span>
+                <%= truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 230, :omission => "...") %>
            </div>
            <div class="" style="margin-top:50px;padding: 0px;display:inline-block;">
                   <%= link_to '<i class="fa fa-eye "></i> Show'.html_safe, post ,style: "font-size:12px;color:#fff;margin-left:4px;", class: "btn btn-success" %>

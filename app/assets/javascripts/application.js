@@ -22,6 +22,7 @@
 //= require retina.min
 //= require jquery.prettyphoto
 //= require custom
-//= require jquery.flexslider-min
+//= require jquery.fitvids
 //= require bootstrap
+//= require fitvids.js
 

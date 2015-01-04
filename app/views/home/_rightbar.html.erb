@@ -24,16 +24,16 @@
          <header class="widget-header">
             <h1 class="widget-title">Most Popular by View</h1>
          </header>
-         <ul class="popular-posts-widget popular-widget-401786409">
-         <% @recent_posts.each do |post| %>
+         <ul class="popular-posts-widget popular-widget-1705209458">
+         <% @most_view.each do |post| %>
             <li class="clearfix">
                <div class="widget-post-small-thumb">
-                  <%= link_to post_path(id: post.id) do %>
-                        <%= image_tag post.image,size: "70"  %>
+                  <%= link_to post_path(post) do %>
+                        <%= image_tag post.image,class: "radius-3px ct-transition wp-post-image",size: "70"  %>
                   <% end %>
                </div>
                <!-- widget-post-small-thumb -->
-               <h2 class="entry-title"><%= link_to truncate(post.name, length: 55), post_path(id: post.id) %></h2>
+               <h2 class="entry-title"><%= link_to truncate(post.name, length: 55), post_path(post) %></h2>
                <span class="entry-date sm-italic-gray">
                      <% if post.created_at > Time.now.beginning_of_day %>
                         <%="#{time_ago_in_words(post.created_at)} ago"%> 

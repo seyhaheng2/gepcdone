@@ -14,52 +14,43 @@
             <h1 class="widget-title">The Lasted Post</h1>
          </header>
          <ul class="popular-posts-widget popular-widget-1705209458">
+         <% @last_post.each do |post| %>
             <li class="clearfix">
                <div class="widget-post-small-thumb">
-                  <a href='../unlimited-mock-up-kit/index.html' title='Permalink to Unlimited Mock Up Kit'>
-                  <img width="73" height="73" src="../wp-content/uploads/2014/12/Unlimited-Mock-Up-Kit_2-73x73.jpg" class="radius-3px ct-transition wp-post-image" alt="Unlimited-Mock-Up-Kit_2" title="Unlimited Mock Up Kit" />                 </a>
+                  <%= link_to post_path(post) do %>
+                     <%= image_tag post.image, class: "radius-3px ct-transition wp-post-image",size: "73" %>
+                  <% end %>
                </div>
                <!-- widget-post-small-thumb -->
-               <h2 class="entry-title"><a href="../unlimited-mock-up-kit/index.html" rel="bookmark">Unlimited Mock Up Kit</a></h2>
+               <h2 class="entry-title">
+               <%= link_to truncate(post.name, length: 50), post_path(post) %>
+               </h2>
                <span class="entry-date sm-italic-gray">
-               December 14, 2014            </span><!-- .entry-date -->
+                     <% if post.created_at > Time.now.beginning_of_day %>
+                        <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                     <% else %> 
+                        <%= post.created_at.strftime("%b %d, %Y") %>
+                     <% end %>           </span><!-- .entry-date -->
                <div class="entry-content">
-                  VideoHive is the #1 marketplace for premium after effects templates and after effects proj ...            
+                   <%= truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 80, :omission => "...") %>
                </div>
                <!-- .entry-content -->
             </li>
-            <li class="clearfix">
-               <div class="widget-post-small-thumb">
-                  <a href='../elena-posing-well/index.html' title='Permalink to Elena posing well'>
-                  <img width="73" height="73" src="../wp-content/uploads/2014/12/15799878669_6829dd8f3d_k_2-73x73.jpg" class="radius-3px ct-transition wp-post-image" alt="Elena posing well" title="Elena posing well" />                  </a>
-               </div>
-               <!-- widget-post-small-thumb -->
-               <h2 class="entry-title"><a href="../elena-posing-well/index.html" rel="bookmark">Elena posing well</a></h2>
-               <span class="entry-date sm-italic-gray">
-               December 14, 2014            </span><!-- .entry-date -->
-               <div class="entry-content">
-                  Another very pretty picture of Siberian tigress Elena! Peer out window, chatter at birds,  ...            
-               </div>
-               <!-- .entry-content -->
-            </li>
-            <li class="clearfix">
-               <div class="widget-post-small-thumb">
-                  <a href='index.html' title='Permalink to Adrian Fittolani at his standing desk'>
-                  <img width="73" height="73" src="../wp-content/uploads/2014/12/15506874176_c453bd57ea_k-73x73.jpg" class="radius-3px ct-transition wp-post-image" alt="Adrian Fittolani at his standing desk" title="Adrian Fittolani at his standing desk" />                  </a>
-               </div>
-               <!-- widget-post-small-thumb -->
-               <h2 class="entry-title"><a href="index.html" rel="bookmark">Adrian Fittolani at his standing desk</a></h2>
-               <span class="entry-date sm-italic-gray">
-               December 14, 2014            </span><!-- .entry-date -->
-               <div class="entry-content">
-                  Adrian Fittolani at his standing desk. Pellentesque sed massa eleifend magna luctus pellen ...            
-               </div>
-               <!-- .entry-content -->
-            </li>
+         <% end %>
          </ul>
       </aside>
-      <!-- END POPULAR POSTS WIDGET -->
+      <aside id="text-4" class="widget widget_text">
+         <header class="widget-header">
+            <h1 class="widget-title">Ads</h1>
+         </header>
+         <div class="textwidget">
+            <div class="ct-google-ads-widget">
+            <% @showads.each do |ad| %>
+               <%= image_tag ad.text %>
+            <% end %>
+            </div>
+         </div>
+      </aside>
 
    </div>
-   <!-- .widget-area-wrapper -->
 </div>
