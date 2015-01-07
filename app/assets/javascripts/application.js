@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require ckeditor/init
 //= require social-share-button
-//= require jquery
 //= require jquery-migrate.min
 //= require post-like
 //= require superfish.min
