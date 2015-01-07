@@ -15,15 +15,9 @@
  *= require social-share-button
  *= require_self
  */
-@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
 @import url(http://fonts.googleapis.com/css?family=Metal);
 @import url(http://fonts.googleapis.com/css?family=Freehand);
-
-/*<div id="tag_cloud">
-  <% tag_cloud Article.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div>*/
 
 .pagi .pagination .current{
 	padding:10px 15px;
@@ -42,7 +36,9 @@
 }
 
 
-
+h1 a{
+    font-family: 'Poiret One', cursive;
+}
 
 
 
