@@ -19,6 +19,7 @@
 @import url(http://fonts.googleapis.com/css?family=Metal);
 @import url(http://fonts.googleapis.com/css?family=Freehand);
 
+
 .pagi .pagination .current{
 	padding:10px 15px;
 	background: #72c9b9;
@@ -37,7 +38,7 @@
 
 
 .row .col-md-3 h1 a{
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poiret One', 'Sansation', sans-serif;
 }
 
 

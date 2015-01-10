@@ -33,6 +33,7 @@ gem 'fog', '~> 1.26.0'
 gem 'aws-sdk', '~> 1.60.2'
 gem 'fitvidsjs_rails'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'dynopoker'
 
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
